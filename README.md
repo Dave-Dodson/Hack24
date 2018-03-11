@@ -12,5 +12,5 @@ This project will contain multiple control schemes including:
 ##Know issues
  - Microsoft APIs are borked(Processing issue)
 
-![logo](https://github.com/daveNewcastle/Hack24/master/logo.png)
+![logo](https://raw.githubusercontent.com/daveNewcastle/Hack24/master/logo.png)
 
