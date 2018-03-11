@@ -9,7 +9,7 @@ This project will contain multiple control schemes including:
  - Speech recognition
  - General purpose keyboard controls
 
-##Know issues
+## Know issues
  - Microsoft APIs are borked(Processing issue)
 
 ![logo](https://raw.githubusercontent.com/daveNewcastle/Hack24/master/logo.png)
