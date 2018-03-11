@@ -16,6 +16,7 @@ static class STATE {
 
   static boolean GAME_PAUSED;
   static Menu MENU;
+  static Direction DIRECTION;
 
   static void initStates(float currentHeight) {
     GAME_WIDTH = currentHeight;

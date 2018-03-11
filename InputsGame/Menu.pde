@@ -32,6 +32,9 @@ class Menu extends UI {
   void Hide() {
     STATE.GAME_PAUSED = false;
     STATE.LAST_BAR= null;
+    keyInput.movedUp = false;
+      keyInput.movedDown = false;
+      keyInput.stayedThere = false;
     InputsGame.game = new Game();
     xOffset = 2000;
     yOffset = 2000;

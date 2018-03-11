@@ -22,6 +22,7 @@ class Game {
 
     STATE.CONTROLLER = keyInput;
     STATE.USER_INTERFACE = new UI();
+    STATE.DIRECTION = new Direction();
     
   }
 
@@ -60,6 +61,7 @@ class Game {
     STATE.PLAYER.display();
     STATE.USER_INTERFACE.display();
     STATE.MENU.display();
+    STATE.DIRECTION.display();
   }
 
   void addObstacles(ArrayList<String> path) {
