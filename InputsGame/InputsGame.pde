@@ -1,10 +1,12 @@
-Game game;
+static Game game;
 float dt;
 float prev;
 
 void setup() {
   size(1500, 800);
   game = new Game();
+  STATE.MENU = new Menu();
+  STATE.MENU.Show("Welcome");
 }
 
 void draw() {

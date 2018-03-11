@@ -1,8 +1,8 @@
 class UI {
   int score;
   PFont font;
-  
-  UI(){
+
+  UI() {
     font = loadFont("./data/Waree-Bold-32.vlw");
     textFont(font, 32);
   }

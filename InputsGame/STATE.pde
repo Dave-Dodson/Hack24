@@ -14,6 +14,9 @@ static class STATE {
   static float BAR_WIDTH;
   static float PLAYER_SIZE;
 
+  static boolean GAME_PAUSED;
+  static Menu MENU;
+
   static void initStates(float currentHeight) {
     GAME_WIDTH = currentHeight;
     CURRENT_LANES =  STATE.STARTING_LANES;

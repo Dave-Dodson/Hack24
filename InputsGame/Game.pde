@@ -6,6 +6,7 @@ class Game {
   ArrayList<Bar> bars;
   PathGenerator pg;
 
+
   Game() {
     STATE.initStates(height);
 
@@ -21,28 +22,33 @@ class Game {
 
     STATE.CONTROLLER = keyInput;
     STATE.USER_INTERFACE = new UI();
+    
   }
 
   void update(float dt) {
+
     while (STATE.LAST_BAR.position.x < width + 500) {
       bars.add(new Bar());
       addObstacles(pg.generate());
     }
-    for (int k = 0; k < bars.size(); k++) {
-      bars.get(k).update(dt);
-      if (bars.get(k).position.x < -1500) {
-        bars.remove(k);
+    if (!STATE.GAME_PAUSED) {
+      for (int k = 0; k < bars.size(); k++) {
+        bars.get(k).update(dt);
+        if (bars.get(k).position.x < -1500) {
+          bars.remove(k);
+        }
       }
-    }
-    for (int k = 0; k < entities.size(); k++) {
-      entities.get(k).update(dt);
-      if (entities.get(k).isOffScreen()) {
-        entities.remove(k);
+      for (int k = 0; k < entities.size(); k++) {
+        entities.get(k).update(dt);
+        if (entities.get(k).isOffScreen()) {
+          entities.remove(k);
+        }
       }
-    }
 
-    STATE.PLAYER.update(dt);
+      STATE.PLAYER.update(dt);
+    }
   }
+
 
   void display() {
     for (Bar bar : bars) {
@@ -53,6 +59,7 @@ class Game {
     }
     STATE.PLAYER.display();
     STATE.USER_INTERFACE.display();
+    STATE.MENU.display();
   }
 
   void addObstacles(ArrayList<String> path) {
@@ -69,17 +76,21 @@ class Game {
 }
 
 void keyPressed() {
-  if (key == 'q') {
-    keyInput.movedUp = true;
-    keyInput.movedDown = false;
-    keyInput.stayedThere = false;
-  } else if (key == 'a') {
-    keyInput.stayedThere = true;
-    keyInput.movedDown = false;
-    keyInput.movedUp = false;
-  } else if (key == 'z') {
-    keyInput.movedDown = true;
-    keyInput.movedUp = false;
-    keyInput.stayedThere = false;
+  if (!STATE.GAME_PAUSED) {
+    if (key == 'q') {
+      keyInput.movedUp = true;
+      keyInput.movedDown = false;
+      keyInput.stayedThere = false;
+    } else if (key == 'a') {
+      keyInput.stayedThere = true;
+      keyInput.movedDown = false;
+      keyInput.movedUp = false;
+    } else if (key == 'z') {
+      keyInput.movedDown = true;
+      keyInput.movedUp = false;
+      keyInput.stayedThere = false;
+    }
+  } else {
+    STATE.MENU.Hide();
   }
 }

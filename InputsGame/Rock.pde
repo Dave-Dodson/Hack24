@@ -14,6 +14,8 @@ class Rock implements Entity {
     position.x -= STATE.STEP * dt;
 
     if (intersects(STATE.PLAYER)) {
+      STATE.MENU.Show("Better Luck Next Time");
+      
       println("DEAD");
     }
   }
