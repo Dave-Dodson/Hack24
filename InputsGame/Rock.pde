@@ -5,20 +5,21 @@ class Rock implements Entity {
 
   Rock(PVector position) {
     this.position = position;
-    this.size = new PVector(STATE.PLAYER_SIZE * 2, STATE.PLAYER_SIZE * 2);
+    this.size = new PVector(STATE.PLAYER_SIZE * 1.5, STATE.PLAYER_SIZE * 1.5);
+    sprite = loadImage("./rock.png");
+    sprite.resize(0, (int) (STATE.PLAYER_SIZE * 1.8));
   }
 
-  void update(float dt, Player player) {
+  void update(float dt) {
     position.x -= STATE.STEP * dt;
 
-    if (intersects(player)) {
-      //println("DEAD");
+    if (intersects(STATE.PLAYER)) {
+      println("DEAD");
     }
   }
 
   void display() {
-    fill(#0A4D1E);
-    rect(position.x, position.y, size.x, size.y);
+    image(sprite, position.x - size.x / 2, position.y - size.y / 2);
   }
 
   void onCollision() {
@@ -31,7 +32,7 @@ class Rock implements Entity {
 
     // if the distance is less than the sum of the circle's
     // radii, the circles are touching!
-    if (distance <= size.y + player.size.y) {
+    if (distance <= size.y + player.size.y - size.y / 3) {
       return true;
     }
     return false;

@@ -14,3 +14,11 @@ void draw() {
   game.update(dt);
   game.display();
 }
+
+
+
+void asyncControl() {
+  STATE.CONTROLLER.moveDown(STATE.PLAYER);
+  STATE.CONTROLLER.moveUp(STATE.PLAYER);
+  STATE.CONTROLLER.stayThere(STATE.PLAYER);
+}

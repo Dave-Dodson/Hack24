@@ -1,8 +1,12 @@
 static class STATE {
-  static final float STEP = 0.4; 
+  static final float STEP = 0.2; 
   static final float LEFT_OFFSET = 175;
-  static final int PATH_GENERATORS = 7;
-  static final int STARTING_LANES = 10;
+  static final int PATH_GENERATORS = 1;
+  static final int STARTING_LANES = 6;
+  static final float CAR_SPEED = 0.2;
+  static Player PLAYER;
+  static Controller CONTROLLER;
+  static UI USER_INTERFACE;
   static float GAME_WIDTH;
   static float CURRENT_LANES;
   static float LANE_WIDTH;
@@ -15,6 +19,6 @@ static class STATE {
     CURRENT_LANES =  STATE.STARTING_LANES;
     LANE_WIDTH = STATE.GAME_WIDTH / STATE.CURRENT_LANES;
     BAR_WIDTH = 800;
-    PLAYER_SIZE = STATE.LANE_WIDTH / STATE.CURRENT_LANES;
+    PLAYER_SIZE = STATE.LANE_WIDTH / STATE.CURRENT_LANES * 3;
   }
 }
