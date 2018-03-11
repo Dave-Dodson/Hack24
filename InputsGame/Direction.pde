@@ -7,7 +7,7 @@ class Direction {
     PImage Img;
     if (keyInput.movedUp) {
       Img = loadImage("up_arrow.png");
-    }
+    }else
     if (keyInput.movedDown) {
       Img = loadImage("down_arrow.png");
     } else {
