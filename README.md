@@ -1,5 +1,7 @@
 # Hack24
 
+Created during the Hack24 hackathon in Nottingham, 13/03/2018.
+
 An attempt at creating a highly accessible game for younger people. This project uses processing and will require a fork of the HTTP module in order to POST binary files
 
 This project will contain multiple control schemes including:
